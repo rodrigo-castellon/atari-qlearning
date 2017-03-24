@@ -17,7 +17,7 @@ References:
 Links:
     - Paper: http://arxiv.org/pdf/1602.01783v1.pdf
     - OpenAI's gym: https://gym.openai.com/
-    - Original Repo: https://github.com/coreylynch/async-rl
+    - Original Code Source: https://github.com/tflearn/tflearn/blob/master/examples/reinforcement_learning/atari_1step_qlearning.py
 
 """
 from __future__ import division, print_function, absolute_import
