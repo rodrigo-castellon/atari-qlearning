@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Teaching a machine to play an Atari game (Pacman by default) by implementing
-a 1-step Q-learning with TFLearn, TensorFlow and OpenAI gym environment. The
-algorithm is described in "Asynchronous Methods for Deep Reinforcement Learning"
-paper. OpenAI's gym environment is used here for providing the Atari game
-environment for handling games logic and states. This example is originally
-adapted from Corey Lynch's repo (url below).
+a 1-step Q-learning with TFLearn, TensorFlow and OpenAI gym environment. This
+version of the original source implements frame differences as what the agent
+sees, as opposed to 4 last frames (4 by default).
 
 Requirements:
     - gym environment (pip install gym)
@@ -163,7 +161,7 @@ class AtariEnvironment(object):
         x_t1, r_t, terminal, info = self.env.step(self.gym_actions[action_index])
         x_t1 = self.get_preprocessed_frame(x_t1)
 	
-
+	
         previous_frames = np.array(self.state_buffer)
         s_t1 = np.empty((self.action_repeat, 84, 84))
         s_t1[:self.action_repeat-1, :] = previous_frames
